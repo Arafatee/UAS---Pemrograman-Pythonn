@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="undangan_view_form" model="ir.ui.view">
+        <field name="name">undangan_view_form</field>
+        <field name="model">undangan</field>
+        <field name="arch" type="xml">
+            <form string="Undangan">
+                <sheet>
+                    <group>
+                        <group string="Identitas Undangan">
+                            <field name="date_create"/>
+                            <field name="nomor"/>
+                        </group>
+                        <!-- <group string="Mengetahui">
+                            <field name="warna"/>
+                            <field name="color" widget="color"/>
+                        </group> -->
+                        <group string="Pokok Isi Undangan">
+                            <field name="date_time"/>
+                            <field name="time"/>
+                            <field name="tempat"/>
+                            <field name="keterangan"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="undangan_tree" model="ir.ui.view">
+        <field name="name">undangan_tree</field>
+        <field name="model">undangan</field>
+        <field name="arch" type="xml">
+            <tree string="Undangan">
+                <field name="date_create"/>
+                <field name="date_time"/>
+                <field name="time"/>
+                <field name="tempat"/>
+                <field name="keterangan"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_undangan" model="ir.actions.act_window">
+        <field name="name">Undangan RT</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">undangan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smilling_face">
+                Mulai Buat Undangan Mu !!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="undangan_root" name="Dashboard"/>
+    <menuitem
+    id="undangan"
+    name="Undangan RT"
+    parent="undangan_root"
+    sequence="4"
+    action="action_undangan"
+    />
+
+</odoo>

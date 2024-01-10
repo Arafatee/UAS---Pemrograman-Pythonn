@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <data>
+        <record id="rismu_paper_portrait" model="report.paperformat">
+            <field name="name">Kertas Portrait SKK</field>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">12</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">15</field>
+            <field name="margin_right">15</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">50</field>
+            <field name="dpi">90</field>
+            <!-- <field name="context">{'copies': 2}</field> -->
+        </record>
+    </data>
+
+    <template id="rismu_card">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="deb">
+                    <div class="page" style="margin-top: -130px; ">
+                        <div class="row">
+                            <div class="container" style="position: relative;">
+                                <img src='/undangan/static/description/suryowinoto.png' style="width:8%; position: relative; top: 90px; left: 60px;"/>
+                            </div>
+                            <div class="col-12 text-center" style="font-family: Times New Roman, Times, serif;">
+                                <b>
+                                    <h4>KOTA YOGYAKARTA</h4>
+                                </b>
+                                <div style="font-family: Times New Roman, Times, serif;">
+                                REMAJA MUSHOLA SURYOWINOTO
+                                </div>
+                                <div style="font-family: Times New Roman, Times, serif;">
+                                RW 01 RT 01 KELURAHAN GIWANGAN KECAMATAN UMBULHARJO
+                                </div>
+                                <div style="font-family: Times New Roman, Times, serif; font-size: 13px;">
+                                Sekretariat : Gg. Tunggulmogo No. Yogyakarta
+                                </div>
+                                <!-- <div style="width: 100% ; align: center ; outline-width: 50px">
+                                <hr/>
+                                </div> -->
+                                <hr style="outline-style: solid;"/>
+                            </div>
+                        </div>
+                        <div class="oe_structure"/>
+                        <div class="text-right" style="font-family: Times New Roman, Times, serif; font-size: 16px; padding-right: 60px;">
+                                <span t-field="deb.date_create"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-1" style="font-family: Times New Roman, Times, serif; font-size: 16px; padding-left: 10px;">
+                                    Nomor
+                                    </div>
+                                    <div class="col-200"  style="font-family: Times New Roman, Times, serif; font-size: 20px;">
+                                    : <span t-field="deb.nomor"/>
+                                    </div>
+                                    
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-1" style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 10px;">
+                                    Lamp
+                                    </div>
+                                    <div class="col-200"  style="font-family: Times New Roman, Times, serif; font-size: 20px;">
+                                        : 
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-1" style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 10px;">
+                                    Hal
+                                    </div>
+                                    <div class="col-200"  style="font-family: Times New Roman, Times, serif; font-size: 20px;">
+                                        : <strong>Undangan</strong>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-right" style="font-family: Times New Roman, Times, serif; font-size: 16px; padding-right: 280px;">
+                                Kepada
+                        </div>
+                        <div class="text-right" style="font-family: Times New Roman, Times, serif; font-size: 16px; padding-right: 95px;">
+                                RISMU Suryowinoto................
+                        </div>
+                        <br/><br/>
+                        <span style="font-family: Times New Roman, Times, serif; font-size: 17px; font-style: italic;">
+                            Assalamu’alaikum Warahmatullahi Wabarakaatuh.</span><br/><br/>
+                        <span style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 30px">
+                            Puji syukur kita panjatkan kehadiran Allah SWT. Sholawat serta salam semoga tetap tercurah kepada panutan Agung Nabi Muhammad SAW, beserta sahabat dan umatnya hingga yaumul akhir.</span><br/><br/>
+                        <span style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 30px">
+                            Bersama dengan ini, kami mengharapkan kehadiran Saudara'i sekalian, Dalam acara pertemuan/rapat Remaja Musholla Suryowinoto yang akan di laksanakan pada: </span><br/>
+
+                        <div class="col 10">
+                            <div class="row">
+                                <div class="col-3" style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 50px;">
+                                    Hari/Tanggal
+                                </div>
+                                <div class="col-13" style="font-family: Times New Roman, Times, serif; font-size: 17px;">: 
+                                    <span t-field="deb.date_time"/>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-3" style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 50px;">
+                                    Waktu
+                                </div>
+                                <div class="col-13" style="font-family: Times New Roman, Times, serif; font-size: 17px;">: 
+                                    <span t-field="deb.time"/>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-3" style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 50px;">
+                                    Tempat
+                                </div>
+                                <div class="col-13" style="font-family: Times New Roman, Times, serif; font-size: 17px;">: 
+                                    <strong><span t-field="deb.tempat"/></strong>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-3" style="font-family: Times New Roman, Times, serif; font-size: 17px; padding-left: 50px;">
+                                    Acara
+                                </div>
+                                <div class="col-13" style="font-family: Times New Roman, Times, serif; font-size: 17px;">: 
+                                    <span t-field="deb.keterangan"/>
+                                </div>
+                            </div>
+                        </div>
+                        <span style="font-family: Times New Roman, Times, serif; font-size: 17px;">
+                            Demikian undangan ini kami sampaikan, atas perhatian dan kehadirannya kami ucapkan terimakasih.</span><br/><br/>
+                        <span style="font-family: Times New Roman, Times, serif; font-size: 17px; font-style: italic; ">
+                            Wassalamu’alaikum Warahmatullahi Wabarakaatuh.</span><br/><br/>
+
+                    </div>
+                     <div class="container" style="position: relative; text-align: left">
+                            <span style="width:8%; top: 90px; text-align: center;"><strong>Ketua Takmir</strong></span>
+                            <br/><br/><br/><br/><br/>
+                            <span style="width:8%; position: relative; top: 90px;">saya lupa namanya</span>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

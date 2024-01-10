@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <!-- <record id="report_rismu_card" model="ir.actions.report">
+        <field name="name">Print Undangan RISMU.PDF</field>
+        <field name="model">rismu</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">undangan.rismu_card</field>
+        <field name="report_file">undangan.rismu_card</field>
+        <field name="paperformat_id" ref="undangan.rismu_paper_portrait"/>
+    </record> -->
+    
+
+    <report
+        id ="report_rismu_card"
+        model ='rismu'
+        string="Printout RISMU PDF"
+
+        report_type="qweb-pdf"
+        menu="True"
+
+        name="undangan.rismu_card"
+        file="undangan.rismu_card"
+        />
+    
+</odoo>
